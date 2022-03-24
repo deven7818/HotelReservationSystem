@@ -2,11 +2,11 @@ package com.hotelreservationsystem;
 
 public class Hotel {
 	
+
 	private String hotelName;
-	private String customerType;
 	private int rating;
-	private int rates;
-	private String day;
+	private double regularCustomerRate;
+	
 	
 	/**
 	 * Default Constructor
@@ -18,20 +18,19 @@ public class Hotel {
 	 * Parameterized Constructor
 	 * @param hotelName - name of hotels
 	 * @param rating - rating given to hotel
-	 * @param rates - rates 
+	 * @param regularCustomerRate - rates for regular customers
 	 */
-	public Hotel(String hotelName,String customerType, int rating, int rates, String day) {
+	public Hotel(String hotelName, int rating, double regularCustomerRate) {
 		this.hotelName = hotelName;
-		this.customerType = customerType;
+		this.regularCustomerRate = regularCustomerRate;
 		this.rating = rating;
-		this.rates = rates;
-		this.day = day;
 	}
+
 
 	/**
 	 * Getter and setter methods
 	 * 
-	 */
+	 */	
 	public String getHotelName() {
 		return hotelName;
 	}
@@ -40,12 +39,12 @@ public class Hotel {
 		this.hotelName = hotelName;
 	}
 
-	public String getCustomerType() {
-		return customerType;
+	public double getRegularCustomerRate() {
+		return regularCustomerRate;
 	}
 
-	public void setCustomerType(String customerType) {
-		this.customerType = customerType;
+	public void setRegularCustomerRate(double regularCustomerRate) {
+		this.regularCustomerRate = regularCustomerRate;
 	}
 
 	public int getRating() {
@@ -56,24 +55,14 @@ public class Hotel {
 		this.rating = rating;
 	}
 
-	public int getRates() {
-		return rates;
+	/**
+	 * toString Method to print data in string form
+	 */
+	@Override
+	public String toString() {
+		return "Hotel [hotelName=" + hotelName + ", regularCustomerRate=" + regularCustomerRate + ", rating=" + rating
+				+ "]";
 	}
 
-	public void setRates(int rates) {
-		this.rates = rates;
-	}
-	
-	public String getDay() {
-		return day;
-	}
-
-	public void setDay(String day) {
-		this.day = day;
-	}
-	
-	
-	
-	
 
 }
