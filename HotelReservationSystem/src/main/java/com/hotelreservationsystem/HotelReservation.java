@@ -1,7 +1,11 @@
 package com.hotelreservationsystem;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
+import java.util.TreeMap;
+import java.util.stream.Collectors;
 
 public class HotelReservation {
 
@@ -21,7 +25,7 @@ public class HotelReservation {
 	/**
 	 * ArrayList of hotelName list of hotels
 	 */
-	ArrayList<Hotel> hotelList = new ArrayList<Hotel>();
+	static ArrayList<Hotel> hotelList = new ArrayList<Hotel>();
 
 	/**
 	 * Method to add new hotel to list using ArrayList
@@ -45,10 +49,26 @@ public class HotelReservation {
 		return hotelList.add(hotel);
 	}
 
+
+	
 	/**
 	 * Method to print list of hotels
 	 */
 	public void printHotelList() {
 		System.out.println(hotelList);
 	}
+	
+	public static Hotel getCheapestHotel(LocalDate startData, LocalDate endData) {
+		//Optional<Hotel> cheapHotelList = hotelList.stream().mapToDouble(V -> getCheapestHotel(startData, endData).min()));
+		
+		List<Hotel> cheapHotelList = hotelList.stream()
+			    .collect(Collectors.groupingBy(Hotel::getRegularCustomerRate, TreeMap::new, Collectors.toList()))
+			    .firstEntry()
+			    .getValue();
+
+		return cheapHotelList.get(0);
+	}
+	
+	
+	
 }

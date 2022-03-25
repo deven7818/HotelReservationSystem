@@ -22,8 +22,9 @@ public class Hotel {
 	 */
 	public Hotel(String hotelName, int rating, double regularCustomerRate) {
 		this.hotelName = hotelName;
-		this.regularCustomerRate = regularCustomerRate;
 		this.rating = rating;
+		this.regularCustomerRate = regularCustomerRate;
+	
 	}
 
 
