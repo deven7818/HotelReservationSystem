@@ -5,6 +5,8 @@ import java.time.LocalDate;
 import java.time.temporal.ChronoField;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.Optional;
 import java.util.Scanner;
 import java.util.stream.Collectors;
 
@@ -73,7 +75,7 @@ public class HotelReservation {
 	 * @return - cheapest hotel
 	 */
 	
-	public String getCheapestHotel(LocalDate startData, LocalDate endData) {
+	public ArrayList<Hotel> getCheapestHotel(LocalDate startData, LocalDate endData) {
 		//Optional<Hotel> cheapHotelList = hotelList.stream().mapToDouble(V -> getCheapestHotel(startData, endData).min()));
 		
 		int numberOfDays = (int) ChronoUnit.DAYS.between(startData, endData);
@@ -131,10 +133,24 @@ public class HotelReservation {
 		*/
 		if(cheapestPrice != Double.MAX_VALUE) {
 			System.out.println("Cheapest Hotel :" + cheapestHotel.get(0).getHotelName() + "Total rates :" + cheapestPrice);
-			return cheapestHotel.get(0).getHotelName();
+			return cheapestHotel;
 		}
 
 		return null;
 	}
 
+	/**
+	 * Method to find cheapest best rated hotel
+	 * created array list of hotels calling getCheapestHotel() method to get cheapest hotel
+	 * then filter the array list to get cheapest best rated hotel
+	 * @param startData - checked-in date in hotel
+	 * @param endData - checked-out date from hotel
+	 * @return - sorted list of cheapest best rated hotel
+	 */
+	public Hotel getCheapestBestRatedHotel(LocalDate startDate, LocalDate endDate) {
+		//ArrayList<Hotel> cheapestRateHptel = getCheapestHotel(startDate, endDate);
+		Optional<Hotel> sortedHotelList = hotelList.stream().max(Comparator.comparing(Hotel::getRating));
+		System.out.println("Cheapest Best rated hotel :" + sortedHotelList.get().getHotelName());
+		return sortedHotelList.get();
+	}
 }

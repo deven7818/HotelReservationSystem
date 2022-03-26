@@ -10,7 +10,8 @@ import java.time.Month;
  *2. find the cheapest Hotel for a given Date Range . 
  *3. Add weekday and weekend rates for each Hotel
  *4. find the cheapest Hotel for a given Date Range based on weekday and weekend .
- *5. Added ratings to each hotel 
+ *5. Added ratings to each hotel .
+ *6. Find cheapest best rated hotel .
  *
  */
 public class HotelReservationMain {
@@ -39,12 +40,11 @@ public class HotelReservationMain {
 		 * printing cheapest hotel
 		 */
 		
-	/*
-		@SuppressWarnings("static-access")
-		Hotel hotel = hotelReservation.getCheapestHotel(startDate, endDate);
-		System.out.println("The Cheapest hotel is : "+ hotel);
-	*/
-		String hotel = hotelReservation.getCheapestHotel(startDate, endDate);
-		System.out.println("The cheapest hotel is : " + hotel);
+	
+		Hotel hotel = hotelReservation.getCheapestBestRatedHotel(startDate, endDate);
+		System.out.println("The Cheapest best rated hotel is : "+ hotel);
+	
+	//	Hotel hotel = hotelReservation.getCheapestHotel(startDate, endDate);
+	//	System.out.println("The cheapest hotel is : " + hotel);
 	}
 }
