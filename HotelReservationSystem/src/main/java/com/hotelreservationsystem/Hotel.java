@@ -6,6 +6,8 @@ public class Hotel {
 	private int rating;
 	private double weekdayRegularCustomerRate;
 	private double weekendRegularCustomerRate;
+	private double weekdayRewardCustomerRate;
+	private double weekendRewardCustomerRate;
 
 	/**
 	 * Default Constructor
@@ -20,13 +22,17 @@ public class Hotel {
 	 * @param rating                     - rating given to hotel
 	 * @param weekdayRegularCustomerRate - rates for weekday regular customers
 	 * @param weekendRegularCustomerRate - rates for weekend regular customers
+	 * @param weekdayRewardCustomerRate  - rates for reward customers on weekdays
+	 * @param weekendRewardCustomerRate  - rates for reward customers on weekend
 	 */
-	public Hotel(String hotelName, int rating, double weekdayRegularCustomerRate, double weekendRegularCustomerRate) {
+	public Hotel(String hotelName, int rating, double weekdayRegularCustomerRate, double weekendRegularCustomerRate,
+			double weekdayRewardCustomerRate, double weekendRewardCustomerRate) {
 		this.hotelName = hotelName;
 		this.rating = rating;
 		this.weekdayRegularCustomerRate = weekdayRegularCustomerRate;
 		this.weekendRegularCustomerRate = weekendRegularCustomerRate;
-
+		this.weekdayRewardCustomerRate = weekdayRewardCustomerRate;
+		this.weekendRewardCustomerRate = weekendRewardCustomerRate;
 	}
 
 	/**
@@ -65,14 +71,32 @@ public class Hotel {
 		this.weekendRegularCustomerRate = weekendRegularCustomerRate;
 	}
 
+	public double getWeekdayRewardCustomerRate() {
+		return weekdayRewardCustomerRate;
+	}
+
+	public void setWeekdayRewardCustomerRate(double weekdayRewardCustomerRate) {
+		this.weekdayRewardCustomerRate = weekdayRewardCustomerRate;
+	}
+
+	public double getWeekendRewardCustomerRate() {
+		return weekendRewardCustomerRate;
+	}
+
+	public void setWeekendRewardCustomerRate(double weekendRewardCustomerRate) {
+		this.weekendRewardCustomerRate = weekendRewardCustomerRate;
+	}
 
 	/**
 	 * toString Method to print data in string form
 	 */
+
 	@Override
 	public String toString() {
 		return "Hotel [hotelName = " + hotelName + ", rating = " + rating + ", weekdayRegularCustomerRate = "
-				+ weekdayRegularCustomerRate + ", weekendRegularCustomerRate = " + weekendRegularCustomerRate + "]";
+				+ weekdayRegularCustomerRate + ", weekendRegularCustomerRate = " + weekendRegularCustomerRate
+				+ ", weekdayRewardCustomerRate = " + weekdayRewardCustomerRate + ", weekendRewardCustomerRate = "
+				+ weekendRewardCustomerRate + "]";
 	}
 
 }

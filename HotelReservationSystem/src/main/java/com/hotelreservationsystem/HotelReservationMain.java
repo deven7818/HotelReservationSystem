@@ -13,6 +13,7 @@ import java.time.Month;
  *5. Added ratings to each hotel .
  *6. Find cheapest best rated hotel .
  *7. Find best rated hotel for given date range.
+ *9. Add special rates for reward customers .
  *
  */
 public class HotelReservationMain {

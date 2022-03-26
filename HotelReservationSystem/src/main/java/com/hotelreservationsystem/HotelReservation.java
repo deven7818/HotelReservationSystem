@@ -22,6 +22,8 @@ public class HotelReservation {
 	int rating;
 	double weekdayRegularCustomerRate;
 	double weekendRegularCustomerRate;
+	double weekdayRewardCustomerRate;
+	double weekendRewardCustomerRate;
 
 	/**
 	 * Scanner class object to get data from user
@@ -54,7 +56,8 @@ public class HotelReservation {
 		/**
 		 * Instance of Hotel
 		 */
-		Hotel hotel = new Hotel(hotelName, rating, weekdayRegularCustomerRate, weekendRegularCustomerRate);
+		Hotel hotel = new Hotel(hotelName, rating, weekdayRegularCustomerRate, weekendRegularCustomerRate,
+				weekdayRewardCustomerRate, weekdayRewardCustomerRate);
 		/**
 		 * add new hotel to hotelList
 		 */
