@@ -12,6 +12,7 @@ import java.time.Month;
  *4. find the cheapest Hotel for a given Date Range based on weekday and weekend .
  *5. Added ratings to each hotel .
  *6. Find cheapest best rated hotel .
+ *7. Find best rated hotel for given date range.
  *
  */
 public class HotelReservationMain {
@@ -42,8 +43,13 @@ public class HotelReservationMain {
 		
 	
 		Hotel hotel = hotelReservation.getCheapestBestRatedHotel(startDate, endDate);
-		System.out.println("The Cheapest best rated hotel is : "+ hotel);
+		System.out.println("The Cheapest best rated hotel is \n : "+ hotel);
 	
+		/**
+		 * calling getBestRatedHote() method from hotelREservation to get best rated hotel
+		 */
+		Hotel bestRatedHotel = hotelReservation.getBestRatedHotel(startDate, endDate);
+		System.out.println("\nBest Rated hotel is \n" +bestRatedHotel);
 	//	Hotel hotel = hotelReservation.getCheapestHotel(startDate, endDate);
 	//	System.out.println("The cheapest hotel is : " + hotel);
 	}
