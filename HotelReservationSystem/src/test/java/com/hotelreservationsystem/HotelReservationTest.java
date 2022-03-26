@@ -39,6 +39,7 @@ public class HotelReservationTest {
 
 	}
 	
+	
 	/**
 	 * test case for testing cheapest best rated hotel.
 	 */
