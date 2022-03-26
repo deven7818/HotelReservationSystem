@@ -15,7 +15,8 @@ public class HotelReservation {
 	 */
 	String hotelName;
 	int rating;
-	double regularCustomerRate;
+	double weekdayRegularCustomerRate;
+	double weekendRegularCustomerRate;
 
 	/**
 	 * Scanner class object to get data from user
@@ -37,19 +38,19 @@ public class HotelReservation {
 		hotelName = sc.next();
 		System.out.println("Enter Rating for hotel : ");
 		rating = sc.nextInt();
-		System.out.println("Enter rates for regular customer : ");
-		regularCustomerRate = sc.nextDouble();
+		System.out.println("Enter rates for regular customer on weekdays : ");
+		weekdayRegularCustomerRate = sc.nextDouble();
+		System.out.println("Enter rates for regular customer on weekends : ");
+		weekendRegularCustomerRate = sc.nextDouble();
 		/**
 		 * Instance of Hotel
 		 */
-		Hotel hotel = new Hotel(hotelName, rating, regularCustomerRate);
+		Hotel hotel = new Hotel(hotelName, rating, weekdayRegularCustomerRate,weekendRegularCustomerRate);
 		/**
 		 * add new hotel to hotelList
 		 */
 		return hotelList.add(hotel);
 	}
-
-
 	
 	/**
 	 * Method to print list of hotels
@@ -58,15 +59,22 @@ public class HotelReservation {
 		System.out.println(hotelList);
 	}
 	
+	/**
+	 * Method to find cheapest hotel 
+	 * @param startData - checked-in date in hotel
+	 * @param endData - checked-out date from hotel
+	 * @return - cheapest hotel
+	 */
+	
 	public static Hotel getCheapestHotel(LocalDate startData, LocalDate endData) {
 		//Optional<Hotel> cheapHotelList = hotelList.stream().mapToDouble(V -> getCheapestHotel(startData, endData).min()));
 		
-		List<Hotel> cheapHotelList = hotelList.stream()
-			    .collect(Collectors.groupingBy(Hotel::getRegularCustomerRate, TreeMap::new, Collectors.toList()))
+		List<Hotel> cheapHotel = hotelList.stream()
+			    .collect(Collectors.groupingBy(Hotel::getWeekdayRegularCustomerRate, TreeMap::new, Collectors.toList()))
 			    .firstEntry()
 			    .getValue();
 
-		return cheapHotelList.get(0);
+		return cheapHotel.get(0);
 	}
 	
 	
