@@ -14,9 +14,11 @@ public class HotelReservation {
 
 	/**
 	 * variables hotelName - name of the hotel, rating - rating given to hotel
-	 * regularCustomerRate - rates for regular customers weekdayRegularCustomerRate
-	 * - rate for regular customers on week days weekendRegularCustomerRate - rate
-	 * for regular customers on week end
+	 * regularCustomerRate - rates for regular customers 
+	 * weekdayRegularCustomerRate - rate for regular customers on week days 
+	 * weekendRegularCustomerRate - rate for regular customers on weekend
+	 * weekdayRewardCustomerRate - rates for reward customers on weekdays
+	 * weekendRewardCustomerRate - rates for reward customers on weekend
 	 */
 	String hotelName;
 	int rating;

@@ -23,7 +23,7 @@ public class HotelReservationTest {
 	}
 
 	/*
-	 * test case for testing cheapest hotel
+	 * test case for testing cheapest hotel.
 	 */
 	@Test
 	public void givenHotelDetailsShouldReturnCheapestHotel() {
@@ -40,7 +40,7 @@ public class HotelReservationTest {
 	}
 	
 	/**
-	 * test case for testing cheapest best rated hotel
+	 * test case for testing cheapest best rated hotel.
 	 */
 	@Test
 	public void givenHotelDetailsShouldReturnCheapestBestRatedHotel() {

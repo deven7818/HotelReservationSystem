@@ -14,6 +14,7 @@ import java.time.Month;
  *6. Find cheapest best rated hotel .
  *7. Find best rated hotel for given date range.
  *9. Add special rates for reward customers .
+ *10. Find cheapest best rated hotel for given date of range for a reward customer
  *
  */
 public class HotelReservationMain {

@@ -18,6 +18,7 @@ public class Hotel {
 	/**
 	 * Parameterized Constructor
 	 * 
+	 * 
 	 * @param hotelName                  - name of hotels
 	 * @param rating                     - rating given to hotel
 	 * @param weekdayRegularCustomerRate - rates for weekday regular customers
