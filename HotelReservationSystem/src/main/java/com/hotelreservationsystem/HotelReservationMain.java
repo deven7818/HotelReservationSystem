@@ -10,6 +10,7 @@ import java.time.Month;
  *2. find the cheapest Hotel for a given Date Range . 
  *3. Add weekday and weekend rates for each Hotel
  *4. find the cheapest Hotel for a given Date Range based on weekday and weekend .
+ *5. Added ratings to each hotel 
  *
  */
 public class HotelReservationMain {
